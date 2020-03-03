@@ -9,7 +9,7 @@ func = find_binary('server.so')[b'']
 #1)0xeff46700 first main entry lets nudge it to our needed instruction
 #func = hex(func.base+0x00C42915)
 #val = func.set_ulong_long(0x00C42915, 16206362688278173161)
-func.unprotect(0x00C42915)
+(func + 0x00C42915).unprotect(8)
 val = func.get_ulong_long(0x00C42915)
 val = func.set_ulong_long(16206362688278173161, 0x00C42915)
 print(val)
